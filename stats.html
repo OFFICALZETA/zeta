@@ -1,115 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zeta — Server Stats</title>
-  <meta name="theme-color" content="#00ae86">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zeta &#8212; Server Stats</title>
+<meta name="theme-color" content="#00ae86">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
-
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="logo"><span>Z</span>ETA</a>
-      <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="stats.html" class="active">Stats</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main>
-    <section class="section-title" style="padding-top: 40px;">
-      <span class="badge" style="margin-bottom:16px; display:inline-block;">Live Data</span>
-      <h2>Server Stats</h2>
-      <p>Real-time statistics from the Zeta Discord server.</p>
-    </section>
-
-    <div id="stats-container">
-      <div class="stats-grid">
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-members">--</div>
-          <div class="stat-label">Members</div>
-        </div>
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-online">--</div>
-          <div class="stat-label">Online</div>
-        </div>
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-verified">--</div>
-          <div class="stat-label">Verified</div>
-        </div>
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-boosts">--</div>
-          <div class="stat-label">Boosts</div>
-        </div>
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-invites">--</div>
-          <div class="stat-label">Total Invites</div>
-        </div>
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-tickets">--</div>
-          <div class="stat-label">Tickets Opened</div>
-        </div>
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-channels">--</div>
-          <div class="stat-label">Channels</div>
-        </div>
-        <div class="card stat-card fade-up">
-          <div class="stat-value" id="stat-roles">--</div>
-          <div class="stat-label">Roles</div>
-        </div>
-      </div>
-
-      <p id="stats-updated" style="text-align:center; color: var(--text-dim); font-size:13px; margin-top:32px;"></p>
-    </div>
-  </main>
-
-  <footer>
-    <p>Zeta &copy; 2026 &mdash; Built for the community.</p>
-  </footer>
-
-  <script>
-   
-    const API_URL = "WORKER_URL";
-
-    async function loadStats() {
-      try {
-        const res = await fetch(`${API_URL}/api/stats`);
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-
-        document.getElementById("stat-members").textContent = data.members ?? "--";
-        document.getElementById("stat-online").textContent = data.online ?? "--";
-        document.getElementById("stat-verified").textContent = data.verified ?? "--";
-        document.getElementById("stat-boosts").textContent = data.boosts ?? "--";
-        document.getElementById("stat-invites").textContent = data.totalInvites ?? "--";
-        document.getElementById("stat-tickets").textContent = data.tickets ?? "--";
-        document.getElementById("stat-channels").textContent = data.channels ?? "--";
-        document.getElementById("stat-roles").textContent = data.roles ?? "--";
-
-        if (data.updatedAt) {
-          const ago = timeAgo(new Date(data.updatedAt));
-          document.getElementById("stats-updated").textContent = `Last updated ${ago}`;
-        }
-      } catch (e) {
-        document.getElementById("stats-updated").textContent = "Could not load stats. Try again later.";
-      }
-    }
-
-    function timeAgo(date) {
-      const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
-      if (seconds < 60) return "just now";
-      if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-      if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
-      return `${Math.floor(seconds / 86400)}d ago`;
-    }
-
-    loadStats();
-  </script>
+<div class="x0 x0a"></div>
+<div class="x0 x0b"></div>
+<nav class="x1"><div class="x1i"><a href="index.html" class="x1l"><span>Z</span>ETA</a><ul class="x1n"><li><a href="index.html">Home</a></li><li><a href="leaderboard.html">Leaderboard</a></li><li><a href="stats.html" class="q">Stats</a></li></ul></div></nav>
+<main class="x2">
+<section class="st" style="padding-top:40px">
+<span class="x3b" style="margin-bottom:16px;display:inline-block">Live Data</span>
+<h2>Server Stats</h2>
+<p>Real-time statistics from the Zeta Discord server.</p>
+</section>
+<div id="d0">
+<div class="sg">
+<div class="c0 sc z"><div class="sv" id="v0">--</div><div class="sl">Members</div></div>
+<div class="c0 sc z"><div class="sv" id="v1">--</div><div class="sl">Online</div></div>
+<div class="c0 sc z"><div class="sv" id="v2">--</div><div class="sl">Verified</div></div>
+<div class="c0 sc z"><div class="sv" id="v3">--</div><div class="sl">Boosts</div></div>
+<div class="c0 sc z"><div class="sv" id="v4">--</div><div class="sl">Total Invites</div></div>
+<div class="c0 sc z"><div class="sv" id="v5">--</div><div class="sl">Tickets Opened</div></div>
+<div class="c0 sc z"><div class="sv" id="v6">--</div><div class="sl">Channels</div></div>
+<div class="c0 sc z"><div class="sv" id="v7">--</div><div class="sl">Roles</div></div>
+</div>
+<p id="d1" style="text-align:center;color:var(--_6);font-size:13px;margin-top:32px"></p>
+</div>
+</main>
+<footer class="ft"><p>Zeta &copy; 2026</p></footer>
+<script>
+!function(){var _0="WORKER_URL";fetch(_0+"/api/stats").then(function(r){return r.json()}).then(function(d){var _1=["members","online","verified","boosts","totalInvites","tickets","channels","roles"];_1.forEach(function(k,i){var _2=document.getElementById("v"+i);if(_2&&d[k]!=null)_2.textContent=d[k]});if(d.updatedAt){var _3=Date.now()-new Date(d.updatedAt).getTime(),_4=Math.floor(_3/1e3);var _5=_4<60?"just now":_4<3600?Math.floor(_4/60)+"m ago":_4<86400?Math.floor(_4/3600)+"h ago":Math.floor(_4/86400)+"d ago";document.getElementById("d1").textContent="Last updated "+_5}}).catch(function(){document.getElementById("d1").textContent="Could not load stats."})}();
+</script>
 </body>
 </html>
